@@ -280,8 +280,16 @@ $(document).ready(
                     queue.sort(function(a, b) {
                         if (a.burstTime > b.burstTime) {
                             return 1;
-                        } else {
+                        } else if (a.burstTime < b.burstTime) {
                             return -1;
+                        }
+                        else{
+                            if(a.processID > b.processID){
+                                return 1;
+                            }
+                            else{
+                                return -1;
+                            }
                         }
                     });
                 }
